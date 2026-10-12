@@ -1,0 +1,81 @@
+<!doctype html>
+<html lang="id">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Kaigo 3D — Denah Greybox</title>
+  <style>
+    html, body {
+      margin: 0;
+      height: 100%;
+      overflow: hidden;
+      background: #1d232b;
+      color: #e8eef5;
+      font-family: system-ui, sans-serif;
+    }
+    #scene { display: block; width: 100vw; height: 100vh; }
+    .panel {
+      position: fixed;
+      background: rgba(16, 20, 26, 0.8);
+      border-radius: 8px;
+      padding: 10px 12px;
+      font-size: 13px;
+      line-height: 1.5;
+    }
+    #hud { top: 12px; left: 12px; }
+    #room { font-size: 16px; font-weight: 600; margin-bottom: 6px; }
+    .swatch {
+      display: inline-block;
+      width: 10px;
+      height: 10px;
+      margin: 0 4px 0 10px;
+      border-radius: 2px;
+      vertical-align: middle;
+    }
+    #minimap { top: 12px; right: 12px; padding: 6px; }
+    #map-canvas { display: block; image-rendering: pixelated; }
+    #help { bottom: 12px; left: 12px; }
+    #start {
+      position: fixed;
+      inset: 0;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background: rgba(0, 0, 0, 0.45);
+      font-size: 18px;
+      cursor: pointer;
+    }
+    #start.hidden { display: none; }
+  </style>
+  <script type="importmap">
+    {
+      "imports": {
+        "three": "./node_modules/three/build/three.module.js"
+      }
+    }
+  </script>
+</head>
+<body>
+  <canvas id="scene"></canvas>
+
+  <div id="hud" class="panel">
+    <div id="room">—</div>
+    <span class="swatch" style="background:#4a7fc1"></span>Action
+    <span class="swatch" style="background:#b8b8b8"></span>Transit
+    <span class="swatch" style="background:#7fb27f"></span>Decor
+    <span class="swatch" style="background:#e07a5f"></span>Lift/Tangga
+    <span class="swatch" style="background:#d9a441"></span>Pintu
+  </div>
+
+  <div id="minimap" class="panel"><canvas id="map-canvas"></canvas></div>
+
+  <div id="help" class="panel">
+    W A S D: jalan · Shift: lari · Mouse: lihat · Esc: lepas kontrol<br />
+    Masuk ke lift atau tangga untuk pindah lantai.
+  </div>
+
+  <div id="start">Klik untuk mulai</div>
+
+  <script type="module" src="./src/main.js"></script>
+</body>
+</html>
