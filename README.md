@@ -2,6 +2,8 @@
 
 Greybox Three.js untuk simulasi kaigo: fasilitas hunian lansia 2 lantai dengan koridor, kamar penghuni, ruang staf, area layanan, dan lift/tangga. Denah dibangun dari data (`src/map/layout.js`), lalu dirender menjadi dinding, lantai, pintu, dan label ruangan. Tahap ini hanya mencakup navigasi dan denah; interaksi (tombol E), penghuni, dan sistem tugas belum dibuat.
 
+Ingin ikut mengerjakan? Baca [CONTRIBUTING.md](CONTRIBUTING.md).
+
 ## Menjalankan
 
 ```bash
